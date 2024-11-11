@@ -64,7 +64,9 @@
             android:background="@drawable/background_rounded_edit_text"
             android:hint="Correo electrónico"
             android:inputType="textEmailAddress"
-            android:paddingHorizontal="15dp" />
+            android:paddingHorizontal="15dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/hint_color"/>
 
         <EditText
             android:id="@+id/edtPassword"
@@ -74,17 +76,21 @@
             android:background="@drawable/background_rounded_edit_text"
             android:hint="Contraseña"
             android:inputType="textPassword"
-            android:paddingHorizontal="15dp" />
+            android:paddingHorizontal="15dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/hint_color"/>
 
         <EditText
-            android:id="@+id/edtPassword2"
+            android:id="@+id/edtConfirmPassword"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginBottom="10dp"
             android:background="@drawable/background_rounded_edit_text"
             android:hint="Repetir contraseña"
             android:inputType="textPassword"
-            android:paddingHorizontal="15dp" />
+            android:paddingHorizontal="15dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/hint_color"/>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -103,6 +109,7 @@
         app:layout_constraintBottom_toBottomOf="parent"/>
 
     <Button
+        android:id="@+id/btnLogin"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="10dp"

@@ -47,7 +47,9 @@
             android:inputType="textEmailAddress"
             android:background="@drawable/background_rounded_edit_text"
             android:hint="@string/user_email"
-            android:paddingHorizontal="15dp"/>
+            android:paddingHorizontal="15dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/hint_color"/>
 
         <EditText
             android:id="@+id/edtPassword"
@@ -57,7 +59,9 @@
             android:inputType="textPassword"
             android:hint="@string/user_password"
             android:background="@drawable/background_rounded_edit_text"
-            android:paddingHorizontal="15dp"/>
+            android:paddingHorizontal="15dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/hint_color"/>
     </LinearLayout>
 
     <Button
