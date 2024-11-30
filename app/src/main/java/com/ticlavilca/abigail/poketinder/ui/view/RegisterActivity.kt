@@ -1,12 +1,12 @@
-package com.ticlavilca.abigail.poketinder
+package com.ticlavilca.abigail.poketinder.ui.view
 
-import SharedPreferencesRepository
-import android.content.Intent
 import RegisterViewModel
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.ticlavilca.abigail.poketinder.databinding.ActivityRegisterBinding
+import kotlin.jvm.java
 
 
 class RegisterActivity : AppCompatActivity() {

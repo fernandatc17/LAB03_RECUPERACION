@@ -1,4 +1,7 @@
-package com.ticlavilca.abigail.poketinder
+package com.ticlavilca.abigail.poketinder.data.model
+
+import kotlin.collections.toTypedArray
+import kotlin.text.split
 
 data class PokemonResponse(
     val name: String,

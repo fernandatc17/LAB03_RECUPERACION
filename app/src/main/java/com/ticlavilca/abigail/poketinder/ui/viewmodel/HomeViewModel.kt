@@ -1,20 +1,31 @@
-package com.ticlavilca.abigail.poketinder
+package com.ticlavilca.abigail.poketinder.ui.viewmodel
 
+import android.content.Context
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import androidx.room.Room
+import com.ticlavilca.abigail.poketinder.data.database.PokemonDatabase
+import com.ticlavilca.abigail.poketinder.data.database.entities.MyPokemonEntity
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
-import androidx.lifecycle.ViewModel
+import com.ticlavilca.abigail.poketinder.data.model.PokemonResponse
+import com.ticlavilca.abigail.poketinder.data.network.PokemonApi
 import kotlinx.coroutines.launch
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import kotlin.jvm.java
+import kotlin.let
 
-class MainViewModel {
+class HomeViewModel: ViewModel() {
 
     val pokemonList = MutableLiveData<List<PokemonResponse>>()
 
     val isLoading = MutableLiveData<Boolean>()
 
     val errorApi = MutableLiveData<String>()
+
+    private val POKEMON_DATABASE_NAME = "pokemon_database"
 
     init {
         getAllPokemons()
@@ -37,6 +48,24 @@ class MainViewModel {
             }
         }
     }
+
+    fun savePokemon(pokemonResponse: PokemonResponse, context: Context) {
+        val myPokemon = MyPokemonEntity(
+            name = pokemonResponse.name,
+            image = pokemonResponse.getPokemonImage(),
+            idPokemon = pokemonResponse.getPokemonId()
+        )
+
+        viewModelScope.launch {
+            getRoomDatabase(context).getPokemonDao().insert(myPokemon)
+        }
+    }
+
+    private fun getRoomDatabase(context: Context) = Room.databaseBuilder(
+        context,
+        PokemonDatabase::class.java,
+        POKEMON_DATABASE_NAME
+    ).build()
 
     private fun getRetrofit(): Retrofit {
         return Retrofit.Builder()

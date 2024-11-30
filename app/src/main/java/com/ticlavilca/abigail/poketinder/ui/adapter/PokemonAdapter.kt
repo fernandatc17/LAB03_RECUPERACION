@@ -1,10 +1,11 @@
-package com.ticlavilca.abigail.poketinder
+package com.ticlavilca.abigail.poketinder.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.ticlavilca.abigail.poketinder.data.model.PokemonResponse
 import com.ticlavilca.abigail.poketinder.databinding.ItemPokemonBinding
 
 class PokemonAdapter(

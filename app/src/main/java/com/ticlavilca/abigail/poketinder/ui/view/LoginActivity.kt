@@ -1,10 +1,11 @@
-package com.ticlavilca.abigail.poketinder
+package com.ticlavilca.abigail.poketinder.ui.view
 import LoginViewModel
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.ticlavilca.abigail.poketinder.databinding.ActivityLoginBinding
+import kotlin.jvm.java
 
 class LoginActivity : AppCompatActivity() {
 

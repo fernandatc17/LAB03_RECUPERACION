@@ -1,4 +1,4 @@
-package com.ticlavilca.abigail.poketinder
+package com.ticlavilca.abigail.poketinder.ui.view
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.rommansabbir.animationx.Attention
 import com.rommansabbir.animationx.animationXAttention
 import com.ticlavilca.abigail.poketinder.databinding.ActivitySplashBinding
+import kotlin.jvm.java
 
 class SplashActivity : AppCompatActivity() {
 

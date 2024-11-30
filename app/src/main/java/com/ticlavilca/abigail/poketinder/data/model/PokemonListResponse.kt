@@ -1,4 +1,4 @@
-package com.ticlavilca.abigail.poketinder
+package com.ticlavilca.abigail.poketinder.data.model
 
 data class PokemonListResponse(
     val count: Int,
